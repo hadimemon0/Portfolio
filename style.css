@@ -294,6 +294,18 @@ nav ul li a:hover::after{
     flex-basis: 35%;
 }
 
+.contact-left, .sub-title{
+    margin-top: 10px;
+}
+
+.contact-left, .sub-title, .p1{
+    margin-top: 10px;
+}
+
+.contact-left, .sub-title, .p2{
+    margin-top: -10px;
+}
+
 .contact-right{
     flex-basis: 60%;
 }
@@ -430,4 +442,10 @@ nav .fa-solid{
         margin-bottom: 20px;
     }
     
+}
+
+    #msg{
+       color: #61b752;
+       margin-top: -40px;
+       display: block;
 }

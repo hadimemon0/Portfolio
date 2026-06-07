@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
+    <link rel="shortcut icon" href="images/Hadi-Logo.png">
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/0ee671b84e.js" crossorigin="anonymous"></script>
 </head>
@@ -137,12 +138,12 @@
                 <img src="images/img1.png" alt="Project 1">
 
                 <div class="layer">
-                    <h3>Grocery Store Website</h3>
+                    <h3>Custom Shirt website</h3>
                     <p>
-                        A responsive grocery store website built with HTML, CSS, and JavaScript,
-                        featuring a user-friendly interface for browsing products and making purchases online.
+                        A responsive Custom Shirt website built with HTML, CSS, and JavaScript,
+                        A Figma Design Converted Into a Website.
                     </p>
-                    <a href="#"><i class="fa-solid fa-link"></i></a>
+                    <a href="https://clothing-enk4.vercel.app/"><i class="fa-solid fa-link"></i></a>
                 </div>
             </div>
 
@@ -150,12 +151,12 @@
                 <img src="images/img2.png" alt="Project 2">
 
                 <div class="layer">
-                    <h3>Music Website</h3>
+                    <h3>Cursor Animation Of Lizard</h3>
                     <p>
-                        A music streaming website with a modern design, built using HTML, CSS, and JavaScript,
-                        allowing users to browse and play their favorite songs seamlessly.
+                        A Cursor Animation Of Lizard, built using HTML, CSS, and JavaScript,
+                        A horrible Lizard following your Cursor.
                     </p>
-                    <a href="#"><i class="fa-solid fa-link"></i></a>
+                    <a href="https://cursor-animation-of-lizard.vercel.app/"><i class="fa-solid fa-link"></i></a>
                 </div>
             </div>
 
@@ -163,12 +164,12 @@
                 <img src="images/img3.png" alt="Project 3">
 
                 <div class="layer">
-                    <h3>Gym Website</h3>
+                    <h3>Fully Animated Website</h3>
                     <p>
-                        A modern gym website with a clean design, built using HTML, CSS, and JavaScript,
-                        providing members with easy access to workout routines and class schedules.
+                        A modern Animated website with a clean design, built using HTML, CSS, and JavaScript,
+                        providing a modern clean animated look.
                     </p>
-                    <a href="#"><i class="fa-solid fa-link"></i></a>
+                    <a href="https://my-animated-website.vercel.app/"><i class="fa-solid fa-link"></i></a>
                 </div>
             </div>
         </div>
@@ -182,8 +183,8 @@
             <div class="row">
             <div class="contact-left">
                 <h1 class="sub-title">Contact Me</h1>
-                <p> <i class="fa-solid fa-paper-plane"></i>h19544360@gmail.com</p>
-                <p> <i class="fa-solid fa-phone"></i>03150319714</p>
+                <p class="p1"> <i class="fa-solid fa-paper-plane"></i>h19544360@gmail.com</p>
+                <p class="p2"> <i class="fa-solid fa-phone"></i>03150319714</p>
                 <div class="social-icons">
                     <a href="https://www.facebook.com/profile.php?id=61552406731801"><i class="fa-brands fa-facebook"></i></a>
                     <a href="https://www.instagram.com/hadi_memon0/"><i class="fa-brands fa-instagram"></i></a>
@@ -193,12 +194,13 @@
                 <a href="images/CV.pdf" download class="btn btn2">Download CV</a>
             </div>
             <div class="contact-right">
-                <form>
+                <form name="Contact Form">
                     <input type="text" name="Name" placeholder="Your Name" required>
                     <input type="email" name="Email" placeholder="Your Email" required>
                     <textarea name="Message" rows="6" placeholder="Your Message" required></textarea>
                     <button type="submit" class="btn btn2">Submit</button>
                 </form>
+                <span id="msg"></span>
             </div>
         </div>
         <div class="copyright">
@@ -238,6 +240,25 @@
         }
 
     </script>
+    <script>
+	const scriptURL = 'https://script.google.com/macros/s/AKfycbzVNwausYXrEqvLDLS-xa9f6waLMe4Uh_uEqnAWPzAsHQeVlMtm1mLX7IjEwNQ8QHEaFQ/exec'
+	const form = document.forms['Contact Form']
+    const msg = document.getElementById("msg")
+
+	form.addEventListener('submit', e => {
+		e.preventDefault()
+		fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+			.then(response => response.json())
+			.then(response => {
+                msg.innerHTML = "Message sent successfully!"
+                setTimeout(function(){
+                    msg.innerHTML = ""
+                }, 5000)
+                form.reset()
+            })
+			.catch(error => console.error('Error!', error.message))
+	})
+</script>
 
 </body>
 </html>
